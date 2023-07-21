@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Web Workshop</title>
+    <link rel="stylesheet" href="web.css">
+   <meta name="viewport" content="width=device-width, initial-scale=0.8">
+  </head>
+
+
+  <div class="div1">
+
+
+
+
+
+
+
+
+
+      <script>
+        function scrollAnimation() {
+          var element = document.querySelector('#scroll-animation');
+          var position = element.getBoundingClientRect().top;
+          var windowHeight = window.innerHeight;
+
+          if (position < windowHeight) {
+            element.classList.add('animate');
+          }
+        }
+
+        window.addEventListener('scroll', scrollAnimation);
+
+</script>
+
+
+
+  <body>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div class="top-bar"></div>
+    <nav class="top-nav">
+      <div class="menu-btn" onclick="toggleSideNav()">
+   <span></span>
+   <span></span>
+   <span></span>
+ </div>
+
+
+     <ul>
+       <li><a  href="">Home</a></li>
+       <li><a href= "#About">About</a></li>
+       <li><a href="#Contact">Contact</a></li>
+     </ul>
+   </nav>
+  <div class="side-nav" id="sideNav">
+     <ul>
+       <li><a  href="">Home</a></li>
+       <li><a  href="#About">About</a></li>
+       <li><a href="#">Contact</a></li>
+       <li><a  target="_blank" href="file:///C:/Users/Sherdll%20Store/OneDrive/Documents/html%20web/learn-more.html">Learn more </a></li>
+     </ul>
+   </div>
+
+
+   <script>
+   function toggleSideNav() {
+     var sideNav = document.getElementById('sideNav');
+     sideNav.classList.toggle('active');
+   }
+
+   document.addEventListener('click', function(event) {
+     var sideNav = document.getElementById('sideNav');
+     var targetElement = event.target; // Clicked element
+
+     // Check if the clicked element is not a part of the side navigation menu
+     if (!sideNav.contains(targetElement) && !targetElement.classList.contains('menu-btn')) {
+       sideNav.classList.remove('active');
+
+
+
+     }
+   });
+
+</script>
+
+<script>
+const menuBtn = document.querySelector('.menu-btn');
+ menuBtn.addEventListener('click', function() {
+   this.classList.toggle('active');
+ });
+</script>
+
+<script>
+
+
+
+
+   window.addEventListener("scroll", function() {
+     var scrollPosition = window.scrollY;
+     var div1 = document.getElementById("div1");
+     var div2 = document.getElementById("div2");
+     var div2Position = div2.getBoundingClientRect().top + scrollPosition;
+     var nav = document.querySelector(".top-nav");
+
+     if (scrollPosition >= div2Position) {
+       nav.classList.add("scrolled");
+     } else {
+       nav.classList.remove("scrolled");
+     }
+
+     var div3 = document.getElementById("div3");
+     var div4 = document.getElementById("div4");
+     var div3Position = div3.getBoundingClientRect().top + scrollPosition;
+     var div4Position = div4.getBoundingClientRect().top + scrollPosition;
+
+     if (scrollPosition >= div4Position) {
+       nav.classList.add("gradient");
+       nav.classList.remove( "pink", "purple", "yellow", "scrolled", "lightblue");
+     } else if (scrollPosition >= div3Position && scrollPosition < div4Position) {
+       nav.classList.add("custom-color");
+       nav.classList.remove("gradient", "dark-green", "purple", "yellow", "scrolled", "lightblue");
+     } else if (scrollPosition >= div2Position && scrollPosition < div3Position) {
+       nav.classList.add("gradient");
+       nav.classList.remove("gradient","dark-green", "pink", "yellow", "dark-blue", "lightblue" ,"custom-color");
+     } else {
+       nav.classList.remove("dark-green", "pink", "purple", "yellow", "dark-blue", "lightblue");
+     }
+   });
+
+
+
+
+
+
+
+
+
+
+
+window.addEventListener("scroll", function() {
+var scrollPosition = window.scrollY;
+var div1 = document.getElementById("div1");
+var div2 = document.getElementById("div2");
+var div2Position = div2.getBoundingClientRect().top + scrollPosition;
+var nav = document.querySelector(".side-nav");
+
+if (scrollPosition >= div2Position) {
+ nav.classList.add("scrolled2");
+} else {
+ nav.classList.remove("scrolled2");
+}
+
+var nav = document.querySelector(".side-nav");
+
+  var div3 = document.getElementById("div3");
+  var div4 = document.getElementById("div4");
+  var div3Position = div3.getBoundingClientRect().top + scrollPosition;
+  var div4Position = div4.getBoundingClientRect().top + scrollPosition;
+  var nav = document.querySelector(".side-nav");
+
+  if (scrollPosition >= div3Position) {
+    nav.classList.add("scrolled3");
+
+  } else {
+      nav.classList.remove("scrolled3");
+  }
+
+  if (scrollPosition >= div4Position) {
+    nav.classList.add("scrolled4");
+
+  } else {
+      nav.classList.remove("scrolled4");
+  }
+
+
+  if (scrollPosition >= div6Position) {
+    nav.classList.add("side-nav.image-background");
+
+  } else {
+      nav.classList.remove("side-nav.image-background");
+  }
+});
+
+
+
+
+
+
+
+
+window.addEventListener("scroll", function() {
+  var scrollPosition = window.scrollY;
+  var div1 = document.getElementById("div1");
+  var div2 = document.getElementById("div2");
+  var div2Position = div2.getBoundingClientRect().top + scrollPosition;
+  var navItems = document.querySelectorAll(".side-nav ul li a");
+
+  navItems.forEach(function(nav) {
+    if (scrollPosition >= div2Position) {
+      nav.style.color = "red";
+    } else {
+      nav.style.color = "";
+    }
+
+    var div3 = document.getElementById("div3");
+    var div4 = document.getElementById("div4");
+    var div3Position = div3.getBoundingClientRect().top + scrollPosition;
+    var div4Position = div4.getBoundingClientRect().top + scrollPosition;
+
+    if (scrollPosition >= div4Position) {
+      nav.style.color = "darkgreen";
+    } else if (scrollPosition >= div3Position) {
+      nav.style.color = "black";
+    } else if (scrollPosition >= div2Position) {
+      nav.style.color = "white";
+    } else {
+      nav.style.color = "";
+    }
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</div>
+
+    <h1 class="d1">Welcome to My Website</h1>
+
+
+  <div class="div">
+      <div class="maintxtdiv">
+        <h1 class="maintxt">
+          Building dynamic websites for business<br> growth and success
+        </h1>
+        <h2 style="font-size: 25px;">Contact us right now :ㅤㅤ</h2>
+<button class="compose-email-button"onclick="window.location.href='mailto:stone.erbil@gmail.com?subject=Compose%20Email'">stone.erbil@gmail.com</button>
+
+    <h2>  <a  href="file:///C:/Users/Sherdll%20Store/OneDrive/Documents/html%20web/learn-more.html" class="learn" >learn more</a> </h2>
+
+    </div>
+  </div>
+
+<div class="all">
+
+
+<div class="div2" id="div2">
+
+
+
+
+
+
+<div class="stars">
+</div>
+
+
+<div id="image-container"></div>
+<br>
+<div id="image-container"></div>
+
+<script>
+// Array of image paths
+const imagePaths = [
+  "https://i.ibb.co/nCv0h5S/star-icon.png",
+  // Add more image paths as needed
+];
+
+// Number of images to generate
+const numImages = 15;
+
+// Get the dimensions of the container
+const container = document.getElementById("image-container");
+const containerWidth = container.offsetWidth;
+const containerHeight = container.offsetHeight;
+
+// Generate and position the images
+for (let i = 0; i < numImages; i++) {
+  const image = document.createElement("img");
+  image.setAttribute("src", imagePaths[Math.floor(Math.random() * imagePaths.length)]);
+  image.classList.add("star-image");
+
+  // Calculate random coordinates within the container with larger range
+  const randomX = Math.floor(Math.random() * (containerWidth - 0 - 0)) + 00; // Add or subtract values to adjust the range
+  const randomY = Math.floor(Math.random() * (containerHeight - 100 - 200)) + 750; // Add or subtract values to adjust the range
+
+  // Set the position of the image
+  image.style.position = "absolute";
+  image.style.left = randomX + "px";
+  image.style.top = randomY + "px";
+
+  container.appendChild(image);
+}
+
+
+
+
+</script>
+<img class="frtimg"  src="https://i.ibb.co/gJqCxx9/Hotpot-5.png" alt="Hotpot-5" border="0">
+<div class="UST" id="scroll-animation">
+We Bring your imagination  <br>
+to reality a reflection of <br> your dreams
+
+
+</div>
+
+</div>
+<!--div3 name pink!-->
+<div class="div3" id="div3">
+
+
+
+      <style>
+        #container {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+        }
+
+        #displayText {
+          padding: 210px;
+          border: 0px solid  transparent;
+
+          margin-right: 10px; /* Optional margin for spacing */
+
+        }
+
+        .circle-button {
+          display: inline-block;
+          width: 75px;
+          height: 75px;
+          border-radius: 50%;
+          text-align: center;
+          line-height: 50px;
+          background-color:black;
+          color: #fff;
+          cursor: pointer;
+          margin-right: 110px;
+        }
+
+
+      </style>
+
+
+
+      <img height="400px"
+       class="secimg" src="https://i.ibb.co/hMMMDMc/Hotpot-4.png" alt="">
+
+<div id="container">
+  <div id="leftContent">
+     <div class="displayTexttxt">
+
+         <div id="displayText" >
+
+      <header>  draw your website as you desire</header>
+        <p> with different fonts and colors
+         just contact us about your business and
+         how you want it to look
+         you dont have to do anything on
+         your own with CodeVerce!
+       </p>
+
+         </div>
+      </div>
+  </div>
+
+
+</div>
+
+      <script>
+        var button1 = document.getElementById("button1");
+        var button2 = document.getElementById("button2");
+        var button3 = document.getElementById("button3");
+        var displayText = document.getElementById("displayText");
+
+        button1.addEventListener("click", function() {
+          displayText.textContent = "Draw your website as you desire with different fonts and colors. Just email us what it's about and how you want it to look. You don't have to do anything on your own with CodeVerce!";
+        });
+
+        button2.addEventListener("click", function() {
+          displayText.textContent = "𝒟𝓇𝒶𝓌 𝓎𝑜𝓊𝓇 𝓌𝑒𝒷𝓈𝒾𝓉𝑒 𝒶𝓈 𝓎𝑜𝓊 𝒹𝑒𝓈𝒾𝓇𝑒 𝓌𝒾𝓉𝒽 𝒹𝒾𝒻𝒻𝑒𝓇𝑒𝓃𝓉 𝒻𝑜𝓃𝓉𝓈 𝒶𝓃𝒹 𝒸𝑜𝓁𝑜𝓇𝓈. 𝒥𝓊𝓈𝓉 𝑒𝓂𝒶𝒾𝓁 𝓊𝓈 𝓌𝒽𝒶𝓉 𝒾𝓉'𝓈 𝒶𝒷𝑜𝓊𝓉 𝒶𝓃𝒹 𝒽𝑜𝓌 𝓎𝑜𝓊 𝓌𝒶𝓃𝓉 𝒾𝓉 𝓉𝑜 𝓁𝑜𝑜𝓀. 𝒴𝑜𝓊 𝒹𝑜𝓃'𝓉 𝒽𝒶𝓋𝑒 𝓉𝑜 𝒹𝑜 𝒶𝓃𝓎𝓉𝒽𝒾𝓃𝑔 𝑜𝓃 𝓎𝑜𝓊𝓇 𝑜𝓌𝓃 𝓌𝒾𝓉𝒽 𝒞𝑜𝒹𝑒𝒱𝑒𝓇𝒸𝑒!";
+        });
+
+        button3.addEventListener("click", function() {
+          displayText.textContent = "𝔇𝔯𝔞𝔴 𝔶𝔬𝔲𝔯 𝔴𝔢𝔟𝔰𝔦𝔱𝔢 𝔞𝔰 𝔶𝔬𝔲 𝔡𝔢𝔰𝔦𝔯𝔢 𝔴𝔦𝔱𝔥 𝔡𝔦𝔣𝔣𝔢𝔯𝔢𝔫𝔱 𝔣𝔬𝔫𝔱𝔰 𝔞𝔫𝔡 𝔠𝔬𝔩𝔬𝔯𝔰. 𝔍𝔲𝔰𝔱 𝔢𝔪𝔞𝔦𝔩 𝔲𝔰 𝔴𝔥𝔞𝔱 𝔦𝔱'𝔰 𝔞𝔟𝔬𝔲𝔱 𝔞𝔫𝔡 𝔥𝔬𝔴 𝔶𝔬𝔲 𝔴𝔞𝔫𝔱 𝔦𝔱 𝔱𝔬 𝔩𝔬𝔬𝔨. 𝔜𝔬𝔲 𝔡𝔬𝔫'𝔱 𝔥𝔞𝔳𝔢 𝔱𝔬 𝔡𝔬 𝔞𝔫𝔶𝔱𝔥𝔦𝔫𝔤 𝔬𝔫 𝔶𝔬𝔲𝔯 𝔬𝔴𝔫 𝔴𝔦𝔱𝔥 ℭ𝔬𝔡𝔢𝔙𝔢𝔯𝔠𝔢!";
+        });
+      </script>
+
+
+  </div>
+
+
+
+<div class="div4"id="div4">
+
+
+
+  <script>
+     function toggleBackground() {
+       var checkbox = document.getElementById("checkbox");
+       var div4 = document.getElementById("div4");
+
+       checkbox.checked = !checkbox.checked;
+
+       if (checkbox.checked) {
+         div4.style.backgroundColor = "white";
+       } else {
+         div4.style.backgroundColor = "black";
+       }
+     }
+
+   </script>
+
+
+
+
+
+
+<div id="About"   class="choseus"><center>Choose Us </center></div>
+
+
+       <div class="container">
+
+
+         <div id="" class="divimg4">
+           <img class="frhimg" src="https://i.ibb.co/NKfMgFz/beeb343d-02ab-4286-83f3-729fba653bc7.png" height="500px" alt="">
+           <div class="div4txt">
+             We specialize in front-end website development, user-friendly interfaces, seamless navigation, and mobile-responsive designs. Trust us to code and design your website for your business.
+
+           </div>
+         </div>
+
+<div class="div5" >
+
+<img src="https://i.ibb.co/CHzqtz2/8a89b92e-9957-4708-a902-62068e1edcf5.png" alt="">
+
+
+         <div class="div5txt">
+With our expertise in front-end development, we can bring your vision to life . Just provide your business details and photos, and we will code the website. Please note, you'll need to host it on a server.       </div>
+
+
+</div>
+
+</div>
+</div>
+
+
+
+  <script>
+      window.addEventListener('scroll', function() {
+        var images = document.getElementsByClassName('check-image');
+        for (var i = 0; i < images.length; i++) {
+          var image = images[i];
+          var positionFromTop = image.getBoundingClientRect().top;
+
+          if (positionFromTop - window.innerHeight <= 0) {
+            image.style.opacity = 1;
+            image.style.transform = 'translateY(0)';
+            image.style.animation = 'scrollAnimation 0.5s ease-in-out forwards';
+          }
+        }
+      });
+    </script>
+
+
+  <!-- Your content here -->
+
+
+
+
+
+
+
+
+
+<div class="container">
+
+   <div  class="div6" id="">
+
+   </div>
+
+
+<style>
+
+</style>
+
+<footer class="footer">
+  <img src="https://i.ibb.co/rbDnPGg/Hotpot-6.png" alt="">
+    <div  class="FP">&copy; 2023 CodeVerce. All rights reserved.</div>
+    <p><a href="file:///C:/Users/Sherdll%20Store/OneDrive/Documents/html%20web/learn-more.html"> Learn More</a></p>
+    <br>
+    <div>
+
+    </div>
+</footer>
+</div>
+
+
+</div>
